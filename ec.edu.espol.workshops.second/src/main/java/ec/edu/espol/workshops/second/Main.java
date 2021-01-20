@@ -52,19 +52,26 @@ public class Main {
         }else {
         	
         	if(ensure.getSex() == 'M' || ensure.getSex() == 'm' && ensure.getLicenseDriver()) {
-        		if (ensure.getStatus().equals("not married")) {
+        		iif (ensure.getStatus().equals("not married")) {
         			if (ensure.getAge() < 25 && ensure.getAge() > 18) {
-        				System.out.println("Se le aumentará $1500 más a su seguro");
-    	             	ensure.setPremium(ensure.getPremium()+1500);
-    	             	System.out.println("Su seguro ahora tiene un precio de: "+ensure.getPremium());
-            		}else if(ensure.getAge() < 65 && ensure.getAge() > 45 && ensure.getLicenseDriver()) {
-                     	System.out.println("Se le restará $100 a su seguro");
-                     	ensure.setPremium(ensure.getPremium()-100);
-                     	System.out.println("Su seguro ahora tiene un precio de: "+ensure.getPremium());
-                    }
-            	}
-        	 }else if ( ((ensure.getSex() == 'F' || ensure.getSex() == 'f') || (ensure.getStatus().toLowerCase() == "married")) && ensure.getLicenseDriver() ) {
-        		System.out.println("Se le restará $200 a su seguro");
+        				System.out.println("Se le aumentarÃ¡ $1500 mÃ¡s a su seguro");
+    	             			ensure.setPremium(ensure.getPremium()+1500);
+    	             			System.out.println("Su seguro ahora tiene un precio de: "+ensure.getPremium());
+            			}
+            			else if (ensure.getAge() < 45 && ensure.getAge() > 25) {
+            				System.out.println("Se le restarÃ¡ $100 a su seguro");
+                     			ensure.setPremium(ensure.getPremium()-100);
+                     			System.out.println("Su seguro ahora tiene un precio de: "+ensure.getPremium());
+            			}
+        			else if(ensure.getAge() < 65 && ensure.getAge() > 45 && ensure.getLicenseDriver()) {
+					System.out.println("Se le restarÃ¡ $100 a su seguro");
+					ensure.setPremium(ensure.getPremium()-100);
+					System.out.println("Su seguro ahora tiene un precio de: "+ensure.getPremium());
+				}
+            		}
+        	}
+		else if ( ((ensure.getSex() == 'F' || ensure.getSex() == 'f') || (ensure.getStatus().toLowerCase() == "married")) && ensure.getLicenseDriver() ) {
+        		System.out.println("Se le restarÃ¡ $200 a su seguro");
               	ensure.setPremium(ensure.getPremium()-200);
               	System.out.println("Su seguro ahora tiene un precio de: "+ensure.getPremium());
              }else
@@ -77,9 +84,6 @@ public class Main {
             			 }
             		 }
             	 }
-        	
-        	
-        	
         }
         
         //System.out.println("=====================================");
